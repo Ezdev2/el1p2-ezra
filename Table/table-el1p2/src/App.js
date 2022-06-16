@@ -1,7 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
 import { dataTables } from './constants/dataTables';
-import { useState } from 'react';
+import { Icon } from '@iconify/react';
+// import { useState } from 'react';
 
 function App() {
   return (
@@ -27,14 +28,12 @@ function Table() {
 function TableHeader() {
     return(
       <>
-        <h4 className='table-title'>DataTable Exemple</h4>
+        <h4 className='table-title'> <span><Icon icon="mdi:table" /></span> DataTable Exemple</h4>
         <div className='select-form'>
             <div className='select-area'>
                 <select id='selectPageEntries'>
                     <option>10</option>
-                    <option>
-                        20
-                    </option>
+                    <option>20</option>
                     <option>30</option>
                     <option>40</option>
                     <option>50</option>
@@ -48,6 +47,15 @@ function TableHeader() {
       </>
     )
 }
+
+// let myData = dataTables;
+
+// function handleHide(e) {
+//   return(
+//     myData.length = e,
+//     myData
+//   )
+// }
 
 function Tableau() {
     return (
@@ -81,18 +89,13 @@ const DataContent = (props) => {
   )
 }
 
-function TableFooter() {
-  let [myData, setmyData] = useState(dataTables.length); 
+function TableFooter() { 
+    // let [myData, setmyData] = useState(0);
   return(
     <div className='table-footer'>
         <label>Show 1 to 10 of 57 entries</label>
         <div>
-            <button onClick={() => {
-              setmyData(10);
-              console.log("tafa", {myData})
-              }}>
-                1
-            </button>
+            <button>1</button>
             <button>2</button>
             <button>3</button>
             <button>4</button>
