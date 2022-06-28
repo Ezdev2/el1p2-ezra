@@ -48,14 +48,12 @@ function TableHeader() {
     )
 }
 
-// let myData = dataTables;
+const myData = dataTables;
 
-// function handleHide(e) {
-//   return(
-//     myData.length = e,
-//     myData
-//   )
-// }
+function hideTable(e){
+  myData.length = e;
+  console.log("ity aho", myData)
+}
 
 function Tableau() {
     return (
@@ -68,7 +66,7 @@ function Tableau() {
               <th>Start Date</th>
               <th>Salary</th>
           </tr>
-          {dataTables.map((dataTable) => {
+          {myData.map((dataTable) => {
               return <DataContent content={dataTable} />;
               })} 
       </table>
@@ -90,13 +88,12 @@ const DataContent = (props) => {
 }
 
 function TableFooter() { 
-    // let [myData, setmyData] = useState(0);
   return(
     <div className='table-footer'>
         <label>Show 1 to 10 of 57 entries</label>
         <div>
-            <button>1</button>
-            <button>2</button>
+            <button onClick={() => hideTable(10)}>1</button>
+            <button onClick={() => hideTable(20)}>2</button>
             <button>3</button>
             <button>4</button>
             <button>5</button>
